@@ -12,7 +12,7 @@ include 'component.html';
 <h1 class="container page-header p-4">
 						Products table
 					</h1>
-  <div class="tableau w-75 m-5 w-100">
+  <div class="tableau w-75 m-5 w-100 shadow">
         <table class="table table-hover" id=productstable >
   <thead>
     <tr>

@@ -78,6 +78,5 @@ include 'component.html';
                 </div>
                 </div>
                 </div>
-
 </body>
 </html>
