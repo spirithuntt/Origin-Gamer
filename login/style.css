@@ -182,12 +182,19 @@ a.ssolink {
 #productstable
 {
   box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+} 
+.bg-info{
+  background-color: #1a1a1a!important;
 }
-.bg-primary {
-  background-color: #5469d4 !important;
+.logout{
+  font-weight: bold;
 }
-
-
+.table>:not(caption)>*>* {
+  padding: 1.5rem;
+}
+.tableau{
+  border: 3px solid black;
+}
 /* .animationRightLeft {
   animation: animationRightLeft 2s ease-in-out infinite;
 }
