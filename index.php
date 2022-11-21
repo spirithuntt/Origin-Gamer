@@ -1,12 +1,23 @@
-<html>
-<head>
+<?php
+session_start();
+if(isset($_SESSION['login'])){
+  header("Location: ./login/dashboard/profile.php");
+}
+include('functions.php');
+?>
+<!doctype html>
+<html lang="en">
+  <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/style.css"> 
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
+  
+
 </head>
 
-
 <body>
-<div class="login-root">
+  <div class="login-root">
     <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
       <div class="loginbackground box-background--white padding-top--64">
         <div class="loginbackground-gridContainer">
@@ -47,35 +58,29 @@
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Sign up to your account</span>
-              <form id="stripe-signup">
-                <div class="field padding-bottom--24">
-                  <label for="username">username</label>
-                  <input type="text" name="username">
+              <span class="padding-bottom--15">Login to your account</span>
+              <form id="stripe-login" method="POST">
+                <div class="form-group">
+                  <label  class="form-label mt-4">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email"placeholder="Enter email">                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
-                <div class="field padding-bottom--24">
-                  <label for="email">Email</label>
-                  <input type="email" name="email">
-                </div>
-                <div class="field padding-bottom--24">
-                  <div class="grid--50-50">
-                    <label for="password">Password</label>
-                    <div class="reset-pass">
-                      <a href="#">Forgot your password?</a>
+                    <div class="d-flex justify-content-center pb-5">
+                      <button class="btn btn-primary" type="submit" name="login" value="login">
+                        Login
+                      </button>
                     </div>
-                  </div>
-                  <input type="password" name="password">
-                </div>
-                <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
-                </div>
-                <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Continue">
                 </div>
               </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 </body>
+
+</html>

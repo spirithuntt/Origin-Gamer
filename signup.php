@@ -1,8 +1,13 @@
-<html>
-<head>
+<?php
+include('functions.php');
+?>
+<!doctype html>
+<html lang="en">
+  <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/style.css"> 
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
   
 
 </head>
@@ -49,35 +54,31 @@
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Sign in to your account</span>
-              <form id="stripe-login">
+              <span class="padding-bottom--15">Sign up to your account</span>
+              <form id="stripe-login" method="post">
+                <div class="form-group">
+                  <label for="exampleInputEmail1" class="form-label mt-4">username</label>
+                  <input type="username" class="form-control" id="user_name" name="user_name" placeholder="Enter username">                </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email"placeholder="Enter email">                </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
-                      <a href="#">Forgot your password?</a>
-                    </div>
+                    
                     <!-- <div class="field padding-bottom--24">
                       <input type="submit" name="submit" value="Continue" href="/dashboard/index.php">
                     </div> -->
                     <div class="d-flex justify-content-center pb-5">
-                      <a class="btn btn-primary" type="submit" name="submit" value="Continue" href="/dashboard/index.php">
-                        Continue
-                      </a>
+                      <button class="btn btn-primary" type="submit" name="signup" value="signup">
+                        Sign up
+                      </button>
                     </div>
-                  
                 </div>
-
               </form>
+              </div>
             </div>
-          </div>
-          <div class="footer-link padding-top--24">
-            <span>Don't have an account? <a href="signup.html">Sign up</a></span>
           </div>
         </div>
       </div>
