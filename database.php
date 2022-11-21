@@ -14,7 +14,7 @@
             echo "not connected";
       }
     
-      else echo "connected";
+      // else echo "connected";
       return $connect;
     }
 

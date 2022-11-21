@@ -4,10 +4,8 @@
 
 <?php
 include 'component.html';
+include 'scripts.php';
 ?>
-
-
-
 <div class="col-sm-10">
 <h1 class="container page-header p-4">
 						Products table
@@ -16,19 +14,42 @@ include 'component.html';
 				<a href="#modal-task" id="addBtn" data-bs-toggle="modal" class="btn btn-success btn-rounded px-4 rounded-pill"><i class="fa fa-plus fa-lg me-2 ms-n2 text-success-900"></i> Add Task</a>
 				</div>
         <div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="in-progress-tasks">
- <div class="card shadow" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="product pic">
-  <div class="card-body">
-  <h6 class="font-weight-bolder text-primary">2500dh</h6>
-    <h6 class="card-title">Product Name</h6>
-    <p class="card-subtitle mb-2 text-muted">Category</p>
-    <p class="card-subtitle mb-2 text-muted">Brand</p>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary btn-sm">Edit</a>
-    <a href="#" class="btn btn-danger btn-sm">Delete</a>
-  </div>
-</div>
-</div>
+          <!-- table -->
+          <div class="tableau w-75 m-2 w-100 p-0">
+        <table class="table" id=productstable >
+  <thead>
+    <tr>
+      <th scope="col">img</th>
+      <th scope="col">ID</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>img.jpg</td>
+      <td>1</td>
+      <td>Intel Core i5-13600KF</td>
+      <td>CPU</td>
+      <td>Intel</td>
+      <td>3</td>
+      <td>3090 DH</td>
+      <td>Some quick example text to build on the description title</td>
+      <td><button type="button" class="btn btn-primary btn-sm">Edit</button><button type="button" class="ms-2 btn btn-danger btn-sm">Delete</button></td>
+    </tr>
+    <?php
+								//PHP CODE HERE
+								//DATA FROM get() FUNCTION
+								get()
+							?> 
+  </tbody>
+</table>
+			</div>
   <!-- <div class="tableau w-75 m-5 w-100 shadow">
         <table class="table table-hover" id=productstable > -->
 
@@ -40,17 +61,21 @@ include 'component.html';
 	<div class="modal fade" id="modal-task">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="" method="POST" id="form-task">
+				<form action="scripts.php" method="POST" id="form-task">
 					<div class="modal-header">
 						<h5 class="modal-title">Add Task</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
 					</div>
 					<div class="modal-body">
 							<!-- This Input Allows Storing Task Index  -->
-							<input type="hidden" id="task-id" name="task-id">
+              <div class="mb-3">
+            <label for="brand" class="col-form-label">img</label>
+            <input type="file" class="form-control" id="img" name="img">
+          </div>
+							<input type="hidden" id="product-id" name="product-id">
 							<div class="mb-3">
 								<label class="form-label">products name</label>
-								<input type="text" class="form-control" id="task-title" name= "title" required/>
+								<input type="text" class="form-control" id="name" name= "name" required/>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Category </label required>
@@ -64,20 +89,17 @@ include 'component.html';
 							</div>
               <div class="mb-3">
             <label for="brand" class="col-form-label">Brand</label>
-            <input type="text" class="form-control" id="brand">
+            <input type="text" class="form-control" id="brand" name="brand">
           </div>
           <div class="mb-3">
             <label for="brand" class="col-form-label">Stock</label>
-            <input type="text" class="form-control" id="Stock">
+            <input type="number" class="form-control" id="stock" name="stock">
           </div>
           <div class="mb-3">
             <label for="brand" class="col-form-label">Price</label>
-            <input type="text" class="form-control" id="price">
+            <input type="number" class="form-control" id="price" name="price">
           </div>
-          <div class="mb-3">
-            <label for="brand" class="col-form-label">img</label>
-            <input type="file" class="form-control" id="img">
-          </div>
+
 							<div class="mb-3">
 								<label class="form-label">Description</label>
 								<textarea class="form-control" rows="10" id="description" name="description"></textarea>
