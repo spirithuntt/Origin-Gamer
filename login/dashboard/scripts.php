@@ -41,7 +41,7 @@ function get()
 
     //SQL SELECT
         #select all the data
-        $sql = "SELECT dashboard.id, dashboard.name, dashboard.category, categories.`category-name` as categoriiess FROM dashboard INNER JOIN categories ON categories.id = dashboard.category";
+        $sql = "SELECT dashboard.id, dashboard.name, dashboard.category, categories.`category-name` as categoriiess , dashboard.brand, dashboard.stock, dashboard.price, dashboard.description FROM dashboard INNER JOIN categories ON categories.id = dashboard.category";
         $result = mysqli_query($connect, $sql);
         #for emotes & counts
         #to excute the query
@@ -50,19 +50,18 @@ function get()
         {
             while($fetch = mysqli_fetch_assoc($result))
             {
-                
                 {
                     echo          '
                 <tr>
                 <td>img.jpg</td>
-                  <td>'.$fetch['id'].'</td>
-                  <td>"'.$fetch['name'].'"</td>
+                  <td> #'.$fetch['id'].'</td>
+                  <td>'.$fetch['name'].'</td>
                   <td>'.$fetch['categoriiess'].'</td>
-                  <td>Intel</td>
-                  <td>3</td>
-                  <td>3090 DH</td>
-                  <td>Some quick example text to build on the description title</td>
-                  <td><button type="button" class="btn btn-primary btn-sm">Edit</button><button type="button" class="ms-2 btn btn-danger btn-sm">Delete</button></td>
+                  <td>'.$fetch['brand'].'</td>
+                  <td>'.$fetch['stock'].'</td>
+                  <td>'.$fetch['price'].' DH</td>
+                  <td>'.$fetch['description'].'</td>
+                  <td><button href="#modal-task" id="'.$fetch['id'].'" data-bs-toggle="modal" onclick="edit('.$fetch['id'].')" type="button" class="btn btn-primary btn-sm modal-tas1">Edit</button><button type="button" class="ms-2 btn btn-danger btn-sm">Delete</button></td>
                 </tr>
               </tbody>
                         </div>';

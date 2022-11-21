@@ -11,7 +11,7 @@ include 'scripts.php';
 						Products table
 					</h1>
           <div class="ms-auto col-sm-2">
-				<a href="#modal-task" id="addBtn" data-bs-toggle="modal" class="btn btn-success btn-rounded px-4 rounded-pill"><i class="fa fa-plus fa-lg me-2 ms-n2 text-success-900"></i> Add Task</a>
+				<a href="#modal-task" id="addBtn" data-bs-toggle="modal" class="btn btn-primary btn-rounded rounded-pill"><i class="fa fa-plus fa-lg me-2 ms-n2 text-success-900"></i> Add Task</a>
 				</div>
         <div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="in-progress-tasks">
           <!-- table -->
@@ -31,17 +31,6 @@ include 'scripts.php';
     </tr>
   </thead>
   <tbody>
-    <tr>
-    <td>img.jpg</td>
-      <td>1</td>
-      <td>Intel Core i5-13600KF</td>
-      <td>CPU</td>
-      <td>Intel</td>
-      <td>3</td>
-      <td>3090 DH</td>
-      <td>Some quick example text to build on the description title</td>
-      <td><button type="button" class="btn btn-primary btn-sm">Edit</button><button type="button" class="ms-2 btn btn-danger btn-sm">Delete</button></td>
-    </tr>
     <?php
 								//PHP CODE HERE
 								//DATA FROM get() FUNCTION
@@ -108,9 +97,9 @@ include 'scripts.php';
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-						<button type="submit" name="delete"  class="btn btn-danger task-action-btn" id="task-delete-btn">Delete</a>
-						<button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</a>
-						<button type="submit" name="save" class="btn btn-primary task-action-btn" id="task-save-btn">Save</button>
+						<button type="submit" name="delete"  class="btn btn-danger action-btn" id="delete-btn">Delete</a>
+						<button type="submit" name="update" class="btn btn-warning action-btn" id="update-btn">Update</a>
+						<button type="submit" name="save" class="btn btn-primary action-btn" id="save-btn">Save</button>
 					</div>
 				</form>
 			</div>
@@ -120,6 +109,7 @@ include 'scripts.php';
   	<!-- ================== BEGIN core-js ================== -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   	<!-- ================== BEGIN core-js ================== -->
+	  <script src="scripts.js"></script>
 
 </body>
 </html>

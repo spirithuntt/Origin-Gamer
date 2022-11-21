@@ -11,8 +11,6 @@ var_dump($_SESSION['email'])
 <html>
 <body>
 
-
-
 <div class="col-sm-10">
 <div class="container p-5 row">
 <div class="row g-6 mb-6">
