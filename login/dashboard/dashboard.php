@@ -3,7 +3,7 @@
 <body>
 
 <?php
-include 'component.html';
+include 'component.php';
 include 'scripts.php';
 ?>
         <!-- ***********title and add button*************** -->
@@ -50,7 +50,7 @@ include 'scripts.php';
 	<div class="modal fade" id="modal-task">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="scripts.php" method="POST" id="form-task">
+				<form action="scripts.php" method="POST" id="form-task" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">Add Task</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -64,12 +64,11 @@ include 'scripts.php';
 							<input type="hidden" id="product-id" name="product-id">
 							<div class="mb-3">
 								<label class="form-label">products name</label>
-								<input type="text" class="form-control" id="name" name= "name" required/>
+								<input type="text" class="form-control" id="name" name= "name" data-parsley-trigger="keyup" required/>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Category </label required>
 								<select class="form-select" id="category" name="category">
-									<option selected disabled >Please select</option>
 									<option value="1">CPU</option>
 									<option value="2">GPU</option>
 									<option value="3">monitor</option>
@@ -78,27 +77,25 @@ include 'scripts.php';
 							</div>
               <div class="mb-3">
             <label for="brand" class="col-form-label">Brand</label>
-            <input type="text" class="form-control" id="brand" name="brand">
+            <input type="text" class="form-control" id="brand" name="brand" data-parsley-trigger="keyup" required>
           </div>
           <div class="mb-3">
             <label for="brand" class="col-form-label">Stock</label>
-            <input type="number" class="form-control" id="stock" name="stock">
+            <input type="number" class="form-control" id="stock" name="stock" data-parsley-type="integer" data-parsley-trigger="keyup" required>
           </div>
           <div class="mb-3">
             <label for="brand" class="col-form-label">Price</label>
-            <input type="number" class="form-control" id="price" name="price">
+            <input type="number" class="form-control" id="price" name="price"data-parsley-type="integer" data-parsley-trigger="keyup" required>
           </div>
 
 							<div class="mb-3">
 								<label class="form-label">Description</label>
-								<textarea class="form-control" rows="10" id="description" name="description"></textarea>
+								<input class="form-control" rows="10" id="description" name="description"></input>
 							</div>
 						
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-						<button type="submit" name="delete"  class="btn btn-danger action-btn" id="delete-btn">Delete</a>
-						<button type="submit" name="update" class="btn btn-warning action-btn" id="update-btn">Update</a>
 						<button type="submit" name="save" class="btn btn-primary action-btn" id="save-btn">Save</button>
 					</div>
 				</form>

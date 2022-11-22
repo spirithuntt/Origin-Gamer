@@ -1,6 +1,8 @@
 <?php
-session_start();
-include 'component.html';
+include('../../init.php');
+include 'scripts.php';
+include 'component.php';
+
 
 if(!isset($_SESSION['login'])){
     header("Location: ../../index.php");
@@ -12,14 +14,16 @@ if(!isset($_SESSION['login'])){
 
 <div class="col-sm-10">
 <div class="container p-5 row">
-<div class="row g-6 mb-6 ">
+<div class="row g-6 mb-6 mc">
                     <div class="col-xl-4 col-sm-6 col-12 my-2">
                         <div class="card shadow border-warning">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
                                         <span class="h6 font-semibold text-muted text-sm d-block mb-2">Products</span>
-                                        <span class="h3 font-bold mb-0">80</span>
+                                        <span class="h3 font-bold mb-0">
+                                        <?php echo total()?>
+                                        </span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">

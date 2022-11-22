@@ -59,7 +59,9 @@ function login()
 					{                                                                                                              
 						$_SESSION['id'] = $user_data['user_id'];
 						$_SESSION['email'] = $user_data['email'];
+						$_SESSION['user_name'] =$user_data['user_name'];
 						$_SESSION['login'] = true;
+
 						
 						header("Location: login/dashboard/profile.php");
 					}

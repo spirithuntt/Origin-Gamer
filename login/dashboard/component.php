@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://parsleyjs.org/src/parsley.css">
+ <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+ <script defer src="https://parsleyjs.org/dist/parsley.js"></script>
     <link rel="stylesheet" href="../../css/style.css"> 
     <title>Origin Gamer></title>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bgg-dark sticky-top shadow">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Origin Gamer</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,10 +50,10 @@
   <div class="container-fluid">
     <div class="row flex-nowrap">
         <!-- ***********side bar************ -->
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark position-fixed">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bbg-dark position-fixed shadow">
             <div class=" d-flex flex-column align-items-center align-items-sm-start my-5 px-3 pt-2 text-white vh-100">
                
-                    <span class="fs-4 d-none d-sm-inline my-3">Welcome<br> name</span>
+                    <span class="fs-4 d-none d-sm-inline my-3 text-light"> WELCOME name</span>
                 
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">

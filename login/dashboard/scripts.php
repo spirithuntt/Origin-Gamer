@@ -106,8 +106,15 @@ function deletep()
             $_SESSION['message'] = "Product has been deleted successfully !";
             header('location: dashboard.php');
         }
-        echo "yy";
     }
+function total()
+{
+    $connect=connection();
+    $sql = "SELECT * FROM dashboard";
+    $result = mysqli_query($connect, $sql);
+    $total = mysqli_num_rows($result);
+    return $total;
+}
 
 
 ?>
