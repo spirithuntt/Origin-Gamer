@@ -6,17 +6,17 @@
 include 'component.html';
 include 'scripts.php';
 ?>
-<div class="col-sm-10">
-<h1 class="container page-header p-4">
-						Products table
-					</h1>
-          <div class="ms-auto col-sm-2">
-				<a href="#modal-task" id="addBtn" data-bs-toggle="modal" class="btn btn-primary btn-rounded rounded-pill"><i class="fa fa-plus fa-lg me-2 ms-n2 text-success-900"></i> Add Task</a>
-				</div>
-        <div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="in-progress-tasks">
-          <!-- table -->
-          <div class="tableau w-75 m-2 w-100 p-0">
-        <table class="table" id=productstable >
+        <!-- ***********title and add button*************** -->
+        <div class="test col py-3">
+			     <div class="row">
+             <h3 class=" text-end col-7 my-5">Products table</h3>
+          <div class=" col text-end">
+				     <button class="btn btn-primary btn-rounded rounded-pill m-5" href="#modal-task" data-bs-toggle="modal" type="button" >Add Game <i class="fa-solid fa-plus"></i></button>
+         </div>
+			</div>
+      <!-- ***********table of all games******************* -->
+     <div class="col-lg-10 col-md-9 col-sm-6 text-center overflow-auto mx-5">
+		 <table class="table" id=productstable >
   <thead>
     <tr>
       <th scope="col">img</th>

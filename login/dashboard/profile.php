@@ -5,7 +5,6 @@ include 'component.html';
 if(!isset($_SESSION['login'])){
     header("Location: ../../index.php");
 }
-var_dump($_SESSION['email'])
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +12,7 @@ var_dump($_SESSION['email'])
 
 <div class="col-sm-10">
 <div class="container p-5 row">
-<div class="row g-6 mb-6">
+<div class="row g-6 mb-6 ">
                     <div class="col-xl-4 col-sm-6 col-12 my-2">
                         <div class="card shadow border-warning">
                             <div class="card-body">

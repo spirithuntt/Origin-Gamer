@@ -188,9 +188,6 @@ a.ssolink {
 .table>:not(caption)>*>* {
   padding: 1.5rem;
 }
-.tableau {
-  border: 3px solid #ffc107;
-}
 /* .animationRightLeft {
   animation: animationRightLeft 2s ease-in-out infinite;
 }

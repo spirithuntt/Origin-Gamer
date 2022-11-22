@@ -1,12 +1,13 @@
 <?php
 //INCLUDE DATABASE FILE
 include('../../database.php');
+
 //SESSSION IS A WAY TO STORE DATA TO BE USED ACROSS MULTIPLE PAGES
 //ROUTING
 if (isset($_POST['save']))
     save();
-    if (isset($_POST['delete']))
-    deletep();
+if (isset($_GET['delete']))
+     deletep();
 if (isset($_POST['update']))
     update();
 
@@ -61,7 +62,8 @@ function get()
                   <td>'.$fetch['stock'].'</td>
                   <td>'.$fetch['price'].' DH</td>
                   <td>'.$fetch['description'].'</td>
-                  <td><button href="#modal-task" id="'.$fetch['id'].'" data-bs-toggle="modal" onclick="edit('.$fetch['id'].')" type="button" class="btn btn-primary btn-sm modal-tas1">Edit</button><button type="button" class="ms-2 btn btn-danger btn-sm">Delete</button></td>
+                  <td><a href="update.php?id='.$fetch['id'].'"><button type="button" class="btn btn-primary btn-sm modal-tas1">Edit</button></a>
+                  <a href="scripts.php?delete='.$fetch['id'].'"><button type="button" class="btn btn-danger btn-sm modal-tas1">Delete</button></a></td>
                 </tr>
               </tbody>
                         </div>';
@@ -73,5 +75,39 @@ function get()
         echo 'no records';
         }
 }
+
+function update()
+{
+    $connect = connection();
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $brand = $_POST['brand'];
+    $category = $_POST['category'];
+    $stock = $_POST['stock'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];
+    $sql = "UPDATE dashboard SET name = '$name', brand = '$brand', category = '$category', stock = '$stock', price = '$price', description = '$description' WHERE id = '$id'";
+    $result=mysqli_query($connect,$sql);
+    if($result){
+        $_SESSION['message'] = "Product has been updated successfully !";
+        header('location: dashboard.php');
+    }
+}
+
+function deletep()
+    {
+        // CODE HERE
+        $connect=connection();
+        $id=$_GET['delete'];
+        //SQL DELETE
+        $sql="DELETE FROM dashboard WHERE id=$id";
+        $result=mysqli_query($connect,$sql);
+        if($result){
+            $_SESSION['message'] = "Product has been deleted successfully !";
+            header('location: dashboard.php');
+        }
+        echo "yy";
+    }
+
 
 ?>
