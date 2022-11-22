@@ -1,16 +1,12 @@
 <?php
 include('../../init.php');
 include 'scripts.php';
-include 'component.php';
-
 
 if(!isset($_SESSION['login'])){
-    header("Location: ../../index.php");
+    header("Location: /Origin-Gamer/");
 }
+include 'component.php';
 ?>
-<!DOCTYPE html>
-<html>
-<body>
 
 <div class="col-sm-10">
 <div class="container p-5 row">
