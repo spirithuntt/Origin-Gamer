@@ -28,7 +28,6 @@ if($result)
                             <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
                         </div>
                         <div class="modal-body">
-                            <!-- This Input Allows Storing Task Index  -->
                             <input type="hidden" id="task-id" name = "id"  value="<?php echo $row['id']; ?>">
                             <div class="mb-3">
                                 <label class="form-label text-light">Product Name</label>

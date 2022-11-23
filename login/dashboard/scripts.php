@@ -11,7 +11,7 @@ if (isset($_GET['delete']))
 if (isset($_POST['update']))
     update();
 
-
+// insert the products into database
     function save()
 {
     //CODE HERE
@@ -21,9 +21,10 @@ if (isset($_POST['update']))
     $Stock = $_POST["stock"];
     $price = $_POST["price"];
     $description = $_POST["description"];
+    $pprice = $_POST["pprice"];
     $connect=connection();
     //SQL INSERT //sql query
-    $sql = "INSERT INTO dashboard values (null,'$name','$category','$brand','$Stock','$price','$description')";
+    $sql = "INSERT INTO dashboard values (null,'$name','$category','$brand','$Stock','$price','$description','$pprice')";
     
     $result = mysqli_query($connect, $sql);#to excute the query
     if ($result) {
@@ -35,6 +36,7 @@ if (isset($_POST['update']))
     $_SESSION['message'] = "Task has been added successfully !";
     header('location: dashboard.php');
 }
+// display the products
 function get()
 {
     //CODE HERE
@@ -75,7 +77,7 @@ function get()
         echo 'no records';
         }
 }
-
+//update the product
 function update()
 {
     $connect = connection();
@@ -93,7 +95,7 @@ function update()
         header('location: dashboard.php');
     }
 }
-
+// delete the product
 function deletep()
     {
         // CODE HERE
@@ -107,6 +109,7 @@ function deletep()
             header('location: dashboard.php');
         }
     }
+// get the totql of products
 function total()
 {
     $connect=connection();
@@ -116,5 +119,31 @@ function total()
     return $total;
 }
 
+//  get the purchase Price 
+function pprices()
+{
+    $connect=connection();
+    $sql = "SELECT SUM(pprice) FROM dashboard";;
+    $result = mysqli_query($connect, $sql);
+    $fetch = mysqli_fetch_assoc($result);
+    return $fetch['SUM(pprice)'];
+}
+
+//  get the selling Price 
+function Sprices()
+{
+    $connect=connection();
+    $sql = "SELECT SUM(price) FROM dashboard";;
+    $result = mysqli_query($connect, $sql);
+    $fetch = mysqli_fetch_assoc($result);
+    return $fetch['SUM(price)'];
+}
+
+// calculate the profit
+function profit()
+{
+   $profit = Sprices() - pprices() ;
+   return $profit;
+}
 
 ?>

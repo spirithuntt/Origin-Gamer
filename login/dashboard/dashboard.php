@@ -83,11 +83,14 @@ include 'scripts.php';
             <label for="brand" class="col-form-label">Stock</label>
             <input type="number" class="form-control" id="stock" name="stock" data-parsley-type="integer" data-parsley-trigger="keyup" required>
           </div>
-          <div class="mb-3">
-            <label for="brand" class="col-form-label">Price</label>
+					<div class="mb-3">
+            <label for="brand" class="col-form-label">purchase Price </label>
             <input type="number" class="form-control" id="price" name="price"data-parsley-type="integer" data-parsley-trigger="keyup" required>
           </div>
-
+          <div class="mb-3">
+            <label for="brand" class="col-form-label">selling price</label>
+            <input type="number" class="form-control" id="pprice" name="pprice"data-parsley-type="integer" data-parsley-trigger="keyup" required>
+          </div>
 							<div class="mb-3">
 								<label class="form-label">Description</label>
 								<input class="form-control" rows="10" id="description" name="description"></input>
@@ -104,7 +107,7 @@ include 'scripts.php';
 	</div>
 
   	<!-- ================== BEGIN core-js ================== -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>y
   	<!-- ================== BEGIN core-js ================== -->
 	  <script src="scripts.js"></script>
 

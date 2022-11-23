@@ -41,7 +41,7 @@ include 'component.php';
                                 <div class="row">
                                     <div class="col">
                                         <span class="h6 font-semibold text-muted text-sm d-block mb-2">Profit</span>
-                                        <span class="h3 font-bold mb-0">215DH</span>
+                                        <span class="h3 font-bold mb-0"><?php echo profit()?> DH</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-primary text-white text-lg rounded-circle">
@@ -63,7 +63,7 @@ include 'component.php';
                                 <div class="row">
                                     <div class="col">
                                         <span class="h6 font-semibold text-muted text-sm d-block mb-2">Spendings</span>
-                                        <span class="h3 font-bold mb-0">1.400DH</span>
+                                        <span class="h3 font-bold mb-0"><?php echo pprices()?> DH</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-info text-white text-lg rounded-circle">

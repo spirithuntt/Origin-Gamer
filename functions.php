@@ -8,6 +8,7 @@ if (isset($_POST['signup']))
 if (isset($_POST['login']))
     login();
 
+// signup function
 function signup()
 {
   $connect=connection();
@@ -35,6 +36,7 @@ function signup()
 	}
 
 }
+// login function
 function login()
 {
   $connect=connection();
@@ -73,4 +75,3 @@ function login()
 		}
 	}
 }
-// dashboard
