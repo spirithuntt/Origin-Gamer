@@ -50,7 +50,7 @@ include 'scripts.php';
 	<div class="modal fade" id="modal-task">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="scripts.php" method="POST" id="form-task" data-parsley-validate>
+				<form action="scripts.php" method="POST" id="form-task" enctype="multipart/form-data" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">Add Task</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -59,7 +59,7 @@ include 'scripts.php';
 							<!-- This Input Allows Storing Task Index  -->
               <div class="mb-3">
             <label for="brand" class="col-form-label">img</label>
-            <input type="file" class="form-control" id="img" name="img">
+            <input type="file" class="form-control" id="img" name="image">
           </div>
 							<input type="hidden" id="product-id" name="product-id">
 							<div class="mb-3">

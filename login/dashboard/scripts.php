@@ -23,8 +23,20 @@ if (isset($_POST['update']))
     $description = $_POST["description"];
     $pprice = $_POST["pprice"];
     $connect=connection();
+
+    $imgname = $_FILES['image']['name'];
+
+    if(!empty($imgname)){
+        $ext = pathinfo($imgname, PATHINFO_EXTENSION);
+        $new_imgname = time().'.'.$ext;
+        move_uploaded_file($_FILES['image']['tmp_name'], '../assets/img/'.$new_imgname);
+    }
+    else{
+        $new_imgname = '';
+    }
+
     //SQL INSERT //sql query
-    $sql = "INSERT INTO dashboard values (null,'$name','$category','$brand','$Stock','$price','$description','$pprice')";
+    $sql = "INSERT INTO dashboard values (null,'$new_imgname','$name','$category','$brand','$Stock','$price','$description','$pprice')";
     
     $result = mysqli_query($connect, $sql);#to excute the query
     if ($result) {
@@ -44,7 +56,7 @@ function get()
 
     //SQL SELECT
         #select all the data
-        $sql = "SELECT dashboard.id, dashboard.name, dashboard.category, categories.`category-name` as categoriiess , dashboard.brand, dashboard.stock, dashboard.price, dashboard.description FROM dashboard INNER JOIN categories ON categories.id = dashboard.category";
+        $sql = "SELECT dashboard.id, dashboard.image, dashboard.name, dashboard.category, categories.`category-name` as categoriiess , dashboard.brand, dashboard.stock, dashboard.price, dashboard.description FROM dashboard INNER JOIN categories ON categories.id = dashboard.category";
         $result = mysqli_query($connect, $sql);
         #for emotes & counts
         #to excute the query
@@ -56,7 +68,7 @@ function get()
                 {
                     echo          '
                 <tr>
-                <td>img.jpg</td>
+                  <th scope="row"><img src="../assets/img/'.$fetch['image'].'" alt="" style="width:50px;height:50px"></th>
                   <td> #'.$fetch['id'].'</td>
                   <td>'.$fetch['name'].'</td>
                   <td>'.$fetch['categoriiess'].'</td>
